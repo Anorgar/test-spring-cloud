@@ -15,8 +15,12 @@ dependencies {
     annotationProcessor("io.micronaut.serde:micronaut-serde-processor")
     implementation("io.micronaut:micronaut-jackson-databind")
     implementation("io.micronaut.discovery:micronaut-discovery-client")
+    implementation("io.micronaut:micronaut-management")
     implementation("io.micronaut.serde:micronaut-serde-jackson")
     runtimeOnly("ch.qos.logback:logback-classic")
+    runtimeOnly("org.yaml:snakeyaml")
+
+
     testImplementation("io.micronaut:micronaut-http-client")
 }
 
@@ -37,17 +41,17 @@ micronaut {
         incremental(true)
         annotations("com.example.*")
     }
-    aot {
-    // Please review carefully the optimizations enabled below
-    // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
-        optimizeServiceLoading = false
-        convertYamlToJava = false
-        precomputeOperations = true
-        cacheEnvironment = true
-        optimizeClassLoading = true
-        deduceEnvironment = true
-        optimizeNetty = true
-    }
+//    aot {
+//    // Please review carefully the optimizations enabled below
+//    // Check https://micronaut-projects.github.io/micronaut-aot/latest/guide/ for more details
+//        optimizeServiceLoading = false
+//        convertYamlToJava = false
+//        precomputeOperations = true
+//        cacheEnvironment = true
+//        optimizeClassLoading = true
+//        deduceEnvironment = true
+//        optimizeNetty = true
+//    }
 }
 
 
